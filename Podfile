@@ -7,6 +7,7 @@ platform :ios, "8.0"
 
 target "uOttawaCommunityHub" do
 pod 'ChameleonFramework/Swift'
+pod 'DateTools'
 pod 'MBProgressHUD'
 pod 'Parse'
 end

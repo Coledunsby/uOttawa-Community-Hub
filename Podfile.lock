@@ -1,20 +1,23 @@
 PODS:
   - Bolts/Tasks (1.5.0)
-  - ChameleonFramework/Default (2.0.4)
-  - ChameleonFramework/Swift (2.0.4):
+  - ChameleonFramework/Default (2.0.5)
+  - ChameleonFramework/Swift (2.0.5):
     - ChameleonFramework/Default
+  - DateTools (1.7.0)
   - MBProgressHUD (0.9.1)
   - Parse (1.10.0):
     - Bolts/Tasks (~> 1.5)
 
 DEPENDENCIES:
   - ChameleonFramework/Swift
+  - DateTools
   - MBProgressHUD
   - Parse
 
 SPEC CHECKSUMS:
   Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
-  ChameleonFramework: 5abe69b1f2a6cc79c3c435fcd9d3d855748225ee
+  ChameleonFramework: 69b0256ae77de31b89b9c83ef501d154e1e64341
+  DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   Parse: 90b2544822200f84b18bfacc4e8b0a3a6c3584a2
 

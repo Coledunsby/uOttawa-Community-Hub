@@ -10,8 +10,8 @@ import Parse
 
 class CHUser: PFUser {
 
-    dynamic var firstName: String?
-    dynamic var lastName: String?
+    @NSManaged var firstName: String
+    @NSManaged var lastName: String
     
     override class func initialize() {
         struct Static {
@@ -20,6 +20,10 @@ class CHUser: PFUser {
         dispatch_once(&Static.onceToken) {
             self.registerSubclass()
         }
+    }
+    
+    func name() -> String {
+        return firstName + " " + lastName
     }
     
 }

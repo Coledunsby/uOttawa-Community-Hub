@@ -4,11 +4,18 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="AvenirNext.ttc">
+            <string>AvenirNext-Medium</string>
+            <string>AvenirNext-Medium</string>
+            <string>AvenirNext-Medium</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
-        <!--Events-->
+        <!--Calendar-->
         <scene sceneID="GzM-bd-8fC">
             <objects>
-                <viewController id="KaH-pT-s4z" customClass="EventsViewController" customModule="uOttawaCommunityHub" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KaH-pT-s4z" customClass="CalendarViewController" customModule="uOttawaCommunityHub" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="InI-xE-S78"/>
                         <viewControllerLayoutGuide type="bottom" id="Uba-lg-muc"/>
@@ -169,13 +176,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Events" id="EoB-xe-AqW">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="UDU-4B-R3Y">
-                            <connections>
-                                <segue destination="qsw-1T-ru4" kind="presentation" id="g2O-2x-P7L"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Calendar" id="EoB-xe-AqW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eEQ-gw-35Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -198,13 +199,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G7t-7l-vzU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="909" y="1942"/>
+            <point key="canvasLocation" x="831" y="1942"/>
         </scene>
-        <!--Events-->
+        <!--Calendar-->
         <scene sceneID="ieD-Ht-TMu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zHZ-b5-BUT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Events" id="KjY-Te-XAA"/>
+                    <tabBarItem key="tabBarItem" title="Calendar" image="calendar" id="KjY-Te-XAA"/>
                     <toolbarItems/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="oE3-ax-ot3">
@@ -221,49 +222,9 @@
             </objects>
             <point key="canvasLocation" x="-627" y="1942"/>
         </scene>
-        <!--Create Event-->
-        <scene sceneID="Nf6-UV-Wnw">
-            <objects>
-                <viewController id="2i1-wt-Q6Q" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="8fW-X8-DNh"/>
-                        <viewControllerLayoutGuide type="bottom" id="uC7-rV-5qg"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Zb3-F5-qFu">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Create Event" id="URe-gB-IqK">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="lGc-4A-eLP"/>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lR5-Wy-Tgr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1623" y="1239"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="nn7-W6-uBA">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qsw-1T-ru4" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hNL-5I-1se">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="2i1-wt-Q6Q" kind="relationship" relationship="rootViewController" id="wl5-PT-BMW"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="pXH-mf-pvA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="909" y="1239"/>
-        </scene>
     </scenes>
     <resources>
+        <image name="calendar" width="32" height="32"/>
         <image name="eventImage" width="1200" height="750"/>
     </resources>
 </document>

@@ -35,20 +35,20 @@
             </objects>
             <point key="canvasLocation" x="380" y="1089"/>
         </scene>
-        <!--Events-->
+        <!--Calendar-->
         <scene sceneID="Wtc-wc-1rf">
             <objects>
-                <viewControllerPlaceholder storyboardName="Events" id="ReL-SZ-HdF" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Calendar" id="ReL-SZ-HdF" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="VK2-Nr-602"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1eT-Nn-QrK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="254.5" y="1634"/>
+            <point key="canvasLocation" x="249.5" y="1634"/>
         </scene>
-        <!--Pages-->
+        <!--Clubs-->
         <scene sceneID="Hep-hL-aWT">
             <objects>
-                <viewControllerPlaceholder storyboardName="Pages" id="UaW-wY-sao" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardName="Clubs" id="UaW-wY-sao" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="ioO-C3-38g"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uTX-fE-qF1" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -1,18 +1,18 @@
 //
-//  CHEvent.swift
+//  CHForumPost.swift
 //  uOttawaCommunityHub
 //
-//  Created by Cole Dunsby on 2015-11-24.
+//  Created by Cole Dunsby on 2015-11-28.
 //  Copyright © 2015 Cole Dunsby. All rights reserved.
 //
 
 import Parse
 
-class CHEvent: PFObject, PFSubclassing {
-
+class CHForumPost: PFObject, PFSubclassing {
+    
+    @NSManaged var user: CHUser
     @NSManaged var name: String
     @NSManaged var info: String
-    @NSManaged var members: PFRelation
     
     override class func initialize() {
         struct Static {
@@ -24,7 +24,7 @@ class CHEvent: PFObject, PFSubclassing {
     }
     
     static func parseClassName() -> String {
-        return "Event"
+        return "ForumPost"
     }
     
 }

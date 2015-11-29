@@ -1,5 +1,5 @@
 //
-//  EventsViewController.swift
+//  CalendarViewController.swift
 //  uOttawaCommunityHub
 //
 //  Created by Cole Dunsby on 2015-11-24.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventsViewController: UIViewController, UITableViewDataSource {
+class CalendarViewController: UIViewController, UITableViewDataSource {
 
     // MARK: - UITableViewDataSource
     
