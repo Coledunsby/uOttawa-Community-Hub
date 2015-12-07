@@ -32,7 +32,7 @@ class CreateClubViewController: UITableViewController, UITextFieldDelegate, UITe
     
     // MARK: - Private Functions
     
-    func dismissKeyboard() {
+    private func dismissKeyboard() {
         view.endEditing(true)
         view.removeGestureRecognizer(tapGR)
     }

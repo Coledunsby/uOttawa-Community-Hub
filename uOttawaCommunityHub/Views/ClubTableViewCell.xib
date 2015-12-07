@@ -13,21 +13,21 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" id="Bud-d8-jb3" customClass="ClubTableViewCell" customModule="uOttawaCommunityHub" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="400" height="100"/>
+            <rect key="frame" x="0.0" y="0.0" width="400" height="150"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bud-d8-jb3" id="aca-6G-W9v">
-                <rect key="frame" x="0.0" y="0.0" width="400" height="99"/>
+                <rect key="frame" x="0.0" y="0.0" width="400" height="149"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yoga" translatesAutoresizingMaskIntoConstraints="NO" id="oyL-Po-Zht">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="99"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="149"/>
                         <animations/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yw6-de-Dpa">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="99"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="154"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clubs" translatesAutoresizingMaskIntoConstraints="NO" id="zFC-ew-pUf">
-                                <rect key="frame" x="334" y="67" width="22" height="22"/>
+                                <rect key="frame" x="334" y="117" width="22" height="22"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="22" id="7bK-ES-Jgk"/>
@@ -39,14 +39,14 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q98-a5-7i2">
-                        <rect key="frame" x="361" y="67" width="29" height="22"/>
+                        <rect key="frame" x="361" y="117" width="29" height="22"/>
                         <animations/>
                         <fontDescription key="fontDescription" name="AvenirNext-MediumItalic" family="Avenir Next" pointSize="16"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOGA CLUB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3do-cc-WIH">
-                        <rect key="frame" x="10" y="67" width="92" height="22"/>
+                        <rect key="frame" x="10" y="117" width="92" height="22"/>
                         <animations/>
                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -67,13 +67,14 @@
                     <constraint firstAttribute="bottom" secondItem="Q98-a5-7i2" secondAttribute="bottom" constant="10" id="Z9A-Uo-Gax"/>
                     <constraint firstAttribute="bottom" secondItem="3do-cc-WIH" secondAttribute="bottom" constant="10" id="cn3-fn-BQi"/>
                     <constraint firstItem="yw6-de-Dpa" firstAttribute="top" secondItem="aca-6G-W9v" secondAttribute="top" id="iPI-2r-2B7"/>
-                    <constraint firstAttribute="bottom" secondItem="yw6-de-Dpa" secondAttribute="bottom" id="las-n0-Pxo"/>
+                    <constraint firstAttribute="bottom" secondItem="yw6-de-Dpa" secondAttribute="bottom" constant="-5" id="las-n0-Pxo"/>
                     <constraint firstItem="zFC-ew-pUf" firstAttribute="centerY" secondItem="Q98-a5-7i2" secondAttribute="centerY" id="uhI-bP-LAq"/>
                 </constraints>
             </tableViewCellContentView>
             <animations/>
             <gestureRecognizers/>
             <connections>
+                <outlet property="backgroundImageView" destination="oyL-Po-Zht" id="bXv-qv-Feh"/>
                 <outlet property="membersImageView" destination="zFC-ew-pUf" id="ik2-qS-mOV"/>
                 <outlet property="membersLabel" destination="Q98-a5-7i2" id="efQ-xm-2Xj"/>
                 <outlet property="nameLabel" destination="3do-cc-WIH" id="aYb-Fi-l2e"/>

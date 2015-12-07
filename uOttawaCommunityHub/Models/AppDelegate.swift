@@ -38,6 +38,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         setupLocationManager()
         
+        CHUser.query()?.findObjectsInBackgroundWithBlock({ (users, error) -> Void in
+            CHClub.query()?.findObjectsInBackgroundWithBlock({ (clubs, error) -> Void in
+                for club in clubs! {
+                    let c = club as! CHClub
+                    for user in users! {
+                        let u = user as! CHUser
+                        c.members.addObject(u)
+                    }
+                    c.saveInBackground()
+                }
+            })
+        })
+        
         return true
     }
     

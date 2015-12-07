@@ -4,6 +4,7 @@ PODS:
   - ChameleonFramework/Swift (2.0.6):
     - ChameleonFramework/Default
   - DateTools (1.7.0)
+  - EasyAnimation (1.0.1)
   - FSCalendar (1.7.1)
   - iOSBlocks (1.2):
     - iOSBlocks/Cocoa (= 1.2)
@@ -27,6 +28,7 @@ PODS:
 DEPENDENCIES:
   - ChameleonFramework/Swift
   - DateTools
+  - EasyAnimation
   - FSCalendar
   - iOSBlocks
   - MBProgressHUD
@@ -40,6 +42,7 @@ SPEC CHECKSUMS:
   Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
   ChameleonFramework: a6b466873ff9a4ce3a5196c20bccf1a97ad9f446
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
+  EasyAnimation: 270584ad88949718dfb9e2d957719f4f7ddc87ea
   FSCalendar: 2eeab982e944125c6b2bc0246438128f3cf72e3e
   iOSBlocks: a52cab17a30314e91b2c85ea4c65f84d19826676
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad

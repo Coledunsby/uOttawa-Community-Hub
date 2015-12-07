@@ -13,8 +13,7 @@ class CHUser: PFUser {
     @NSManaged var firstName: String
     @NSManaged var lastName: String
     @NSManaged var location: PFGeoPoint
-    @NSManaged private(set) var clubFilters: PFRelation
-    @NSManaged private(set) var eventFilters: PFRelation
+    @NSManaged var filters: NSMutableArray
     
     override class func initialize() {
         struct Static {

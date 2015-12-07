@@ -8,10 +8,11 @@
 
 import UIKit
 
-class ClubEventsViewController: UITableViewController {
+class ClubEventsViewController: UITableViewController, TableCellAnimatorFromProtocol {
 
     var club: CHClub!
     var events: [CHEvent] = []
+    var lastSelectedIndexPath: NSIndexPath?
     
     // MARK: - View Lifecycle
     
@@ -24,7 +25,15 @@ class ClubEventsViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
+        self.navigationController?.delegate = self
+        
         fetchData()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.navigationController?.delegate = nil
     }
     
     // MARK: - Private Functions
@@ -51,7 +60,7 @@ class ClubEventsViewController: UITableViewController {
         if indexPath.section == 0 {
             return 50
         } else {
-            return 100
+            return 150
         }
     }
     
@@ -70,7 +79,16 @@ class ClubEventsViewController: UITableViewController {
             let event = events[indexPath.row]
             
             let cell = tableView.dequeueReusableCellWithIdentifier("Cell")! as! EventTableViewCell
-            cell.nameLabel.text = event.name
+            cell.nameLabel.text = event.name.uppercaseString
+            cell.distanceLabel.text = "\(Int((CHUser.currentUser()?.location.distanceInMilesTo(event.location))!))mi"
+            
+            if let image = event.image {
+                image.getDataInBackgroundWithBlock({ (data, error) -> Void in
+                    cell.backgroundImageView?.image = UIImage(data: data!)
+                })
+            } else {
+                cell.backgroundImageView.image = UIImage(named: "eventImage")
+            }
             
             return cell
         }
@@ -78,17 +96,48 @@ class ClubEventsViewController: UITableViewController {
     
     // MARK: - UITableViewDelegate
     
+    override func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        lastSelectedIndexPath = indexPath
+        return indexPath
+    }
+    
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 1 {
             performSegueWithIdentifier("ShowEvent", sender: self)
         }
     }
     
+    // MARK: - TableCellAnimatorFromProtocol
+    
+    func selectedCellView() -> UIView {
+        let cell = tableView.cellForRowAtIndexPath(lastSelectedIndexPath!)!
+        let snapshot = cell.snapshotViewAfterScreenUpdates(false)
+        snapshot.frame = cell.convertRect(cell.bounds, toView: view)
+        return snapshot
+    }
+    
+    func selectedCellImage() -> UIImage {
+        let cell = tableView.cellForRowAtIndexPath(lastSelectedIndexPath!)!
+        
+        UIGraphicsBeginImageContextWithOptions(cell.bounds.size, false, 0.0)
+        cell.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext() as UIImage
+        UIGraphicsEndImageContext()
+        
+        return image
+    }
+    
+    // MARK: - UINavigationControllerDelegate
+    
+    func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        return (operation != .Pop) ? TableCellAnimator() : nil
+    }
+    
     // MARK: - Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.destinationViewController.isKindOfClass(EventViewController) {
-            (segue.destinationViewController as! EventViewController).event = events[(tableView.indexPathForSelectedRow?.row)!]
+            (segue.destinationViewController as! EventViewController).event = events[lastSelectedIndexPath!.row]
         } else if segue.destinationViewController.isKindOfClass(UINavigationController) {
             let navigationController = segue.destinationViewController as! UINavigationController
             (navigationController.viewControllers[0] as! CreateEventViewController).club = club

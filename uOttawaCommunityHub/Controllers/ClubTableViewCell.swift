@@ -15,6 +15,7 @@ class ClubTableViewCell: UITableViewCell {
     @IBOutlet weak var membersLabel: UILabel!
     @IBOutlet weak var membersImageView: UIImageView!
     @IBOutlet weak var overlayView: UIView!
+    @IBOutlet weak var backgroundImageView: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

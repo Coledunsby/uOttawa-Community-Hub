@@ -14,6 +14,7 @@ class CHClub: PFObject, PFSubclassing {
     @NSManaged var info: String
     @NSManaged var email: String
     @NSManaged var website: String
+    @NSManaged var image: PFFile?
     @NSManaged private(set) var admins: PFRelation
     @NSManaged private(set) var members: PFRelation
     @NSManaged private(set) var filters: PFRelation

@@ -16,14 +16,16 @@ class SettingsViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        let currentInstallation = PFInstallation.currentInstallation()
-        currentInstallation.removeObjectForKey("user")
-        currentInstallation.saveInBackground()
-        
-        CHUser.logOut()
-        
-        tabBarController?.selectedIndex = 0
-        tabBarController!.performSegueWithIdentifier("ShowLogin", sender: self)
+        if indexPath.section == 1 {
+            let currentInstallation = PFInstallation.currentInstallation()
+            currentInstallation.removeObjectForKey("user")
+            currentInstallation.saveInBackground()
+            
+            CHUser.logOut()
+            
+            tabBarController?.selectedIndex = 0
+            tabBarController!.performSegueWithIdentifier("ShowLogin", sender: self)
+        }
     }
     
 }

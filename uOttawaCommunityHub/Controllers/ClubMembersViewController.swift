@@ -25,7 +25,7 @@ class ClubMembersViewController: UITableViewController {
     
     private func fetchData() {
         let query = club.members.query()
-        query.orderByDescending("name")
+        query.orderByAscending("lastName")
         query.limit = 1000
         query.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
             self.members.removeAll()
@@ -47,7 +47,7 @@ class ClubMembersViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let member = members[indexPath.row]
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell")! as! EventTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell")!
         cell.textLabel!.text = member.name()
         
         return cell

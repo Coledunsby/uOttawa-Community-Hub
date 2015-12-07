@@ -1,5 +1,5 @@
 //
-//  FiltersCollectionViewController.swift
+//  FiltersViewController.swift
 //  uOttawaCommunityHub
 //
 //  Created by Cole Dunsby on 2015-11-29.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FiltersCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
+class FiltersViewController: UITableViewController {
 
     var filters: [CHFilter] = []
     
@@ -32,53 +32,58 @@ class FiltersCollectionViewController: UICollectionViewController, UICollectionV
                 self.filters.append(object as! CHFilter)
             }
             
-            self.collectionView!.reloadData()
+            self.tableView.reloadData()
         })
+    }
+    
+    private func indexOfFilter(filter: CHFilter) -> Int {
+        for var i = 0; i < CHUser.currentUser()!.filters.count; i++ {
+            if filter.objectId == CHUser.currentUser()!.filters[i].objectId {
+                return i
+            }
+        }
+        return -1
     }
     
     // MARK: - IBActions
     
-    @IBAction func cancelButtonTapped(sender: UIButton) {
+    @IBAction func doneButtonTapped(sender: UIButton) {
         navigationController?.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    @IBAction func doneButtonTapped(sender: UIButton) {
-        
-    }
+    // MARK: - UITableViewDataSource
     
-    // MARK: - UICollectionViewDataSource
-
-    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
-        return 1
-    }
-
-    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filters.count
     }
-
-    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let filter = filters[indexPath.row]
         
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! FilterCollectionViewCell
-        cell.nameLabel.text = filter.name
-        //cell.imgView.image =
-    
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell")!
+        cell.textLabel?.text = filter.name
+        cell.accessoryType = (indexOfFilter(filter) == -1) ? .None : .Checkmark
+        
         return cell
     }
-
-    // MARK: - UICollectionViewDelegate
-
-    override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        collectionView.deselectItemAtIndexPath(indexPath, animated: true)
-    }
-
-    // MARK: - UICollectionViewDelegateFlowLayout
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        let columns: CGFloat = 3
-        let spacing: CGFloat = 5
-        let width = (view.frame.size.width - CGFloat((columns + 1) * spacing)) / columns
-        return CGSize(width: width, height: width)
+    // MARK: - UITableViewDelegate
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        let filter = filters[indexPath.row]
+        let index = indexOfFilter(filter)
+        
+        if index == -1 {
+            CHUser.currentUser()!.filters.addObject(filter)
+        } else {
+            CHUser.currentUser()!.filters.removeObjectAtIndex(index)
+        }
+        
+        CHUser.currentUser()?.saveInBackground()
+        
+        tableView.reloadData()
     }
     
 }

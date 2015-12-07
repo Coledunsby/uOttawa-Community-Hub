@@ -7,9 +7,16 @@
 //
 
 import UIKit
+import ChameleonFramework
 
-class ClubViewController: UIViewController {
+class ClubViewController: UIViewController, TableCellAnimatorToProtocol {
 
+    @IBOutlet weak var eventsButton: UIButton!
+    @IBOutlet weak var membersButton: UIButton!
+    @IBOutlet weak var infoButton: UIButton!
+    @IBOutlet weak var leadingSpaceConstraint: NSLayoutConstraint!
+    @IBOutlet weak var snapshotImageView: UIImageView!
+    
     var club: CHClub!
     var pageViewController: UIPageViewController!
     var eventsVC: ClubEventsViewController!
@@ -22,39 +29,38 @@ class ClubViewController: UIViewController {
         super.viewDidLoad()
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        navigationController?.setNavigationBarHidden(true, animated: true)
-    }
-    
-    override func viewWillDisappear(animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        navigationController?.setNavigationBarHidden(false, animated: true)
-    }
-    
     // MARK: - IBActions
-    
-    @IBAction func backButtonTapped(button: UIButton) {
-        navigationController?.popViewControllerAnimated(true)
-    }
     
     @IBAction func eventsButtonTapped(button: UIButton) {
         if self.pageViewController.viewControllers![0] !== eventsVC {
             pageViewController.setViewControllers([eventsVC], direction: .Forward, animated: false, completion: nil)
+            
+            eventsButton.setTitleColor(FlatGreen(), forState: .Normal)
+            membersButton.setTitleColor(.lightGrayColor(), forState: .Normal)
+            infoButton.setTitleColor(.lightGrayColor(), forState: .Normal)
+            leadingSpaceConstraint.constant = eventsButton.frame.origin.x
         }
     }
     
     @IBAction func membersButtonTapped(button: UIButton) {
         if self.pageViewController.viewControllers![0] !== membersVC {
             pageViewController.setViewControllers([membersVC], direction: .Forward, animated: false, completion: nil)
+            
+            eventsButton.setTitleColor(.lightGrayColor(), forState: .Normal)
+            membersButton.setTitleColor(FlatGreen(), forState: .Normal)
+            infoButton.setTitleColor(.lightGrayColor(), forState: .Normal)
+            leadingSpaceConstraint.constant = membersButton.frame.origin.x
         }
     }
     
     @IBAction func infoButtonTapped(button: UIButton) {
         if self.pageViewController.viewControllers![0] !== infoVC {
             pageViewController.setViewControllers([infoVC], direction: .Forward, animated: false, completion: nil)
+            
+            eventsButton.setTitleColor(.lightGrayColor(), forState: .Normal)
+            membersButton.setTitleColor(.lightGrayColor(), forState: .Normal)
+            infoButton.setTitleColor(FlatGreen(), forState: .Normal)
+            leadingSpaceConstraint.constant = infoButton.frame.origin.x
         }
     }
     

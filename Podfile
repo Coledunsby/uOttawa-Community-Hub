@@ -8,6 +8,7 @@ platform :ios, "8.0"
 target "uOttawaCommunityHub" do
 pod 'ChameleonFramework/Swift'
 pod 'DateTools'
+pod 'EasyAnimation'
 pod 'FSCalendar'
 pod 'iOSBlocks'
 pod 'MBProgressHUD'

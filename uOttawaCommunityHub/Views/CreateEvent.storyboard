@@ -502,25 +502,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="5uj-Rx-YHT">
-                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="3vC-dp-NTM" id="7rg-m4-SNM"/>
-                                </connections>
-                            </searchBar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MC1-ds-9mg">
-                                <rect key="frame" x="0.0" y="108" width="600" height="892"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="936"/>
                                 <animations/>
                                 <gestureRecognizers/>
                                 <connections>
                                     <outlet property="delegate" destination="3vC-dp-NTM" id="ktj-IE-ZkU"/>
                                 </connections>
                             </mapView>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search" translatesAutoresizingMaskIntoConstraints="NO" id="5uj-Rx-YHT">
+                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
+                                <animations/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="3vC-dp-NTM" id="7rg-m4-SNM"/>
+                                </connections>
+                            </searchBar>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mapMarker" translatesAutoresizingMaskIntoConstraints="NO" id="E8V-JA-26r">
-                                <rect key="frame" x="290" y="522" width="20" height="32"/>
+                                <rect key="frame" x="290" y="500" width="20" height="32"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="20" id="DQo-j2-JqI"/>
@@ -559,6 +558,7 @@
                             <constraint firstItem="MC1-ds-9mg" firstAttribute="top" secondItem="5uj-Rx-YHT" secondAttribute="bottom" id="DRF-Xc-g6w"/>
                             <constraint firstItem="9io-c6-YTc" firstAttribute="top" secondItem="MC1-ds-9mg" secondAttribute="bottom" id="Khj-Rr-Ajt"/>
                             <constraint firstItem="5uj-Rx-YHT" firstAttribute="leading" secondItem="l4h-va-XLc" secondAttribute="leadingMargin" constant="-16" id="RaJ-46-E17"/>
+                            <constraint firstItem="MC1-ds-9mg" firstAttribute="top" secondItem="o98-wa-rYo" secondAttribute="bottom" id="VMj-qy-zte"/>
                             <constraint firstItem="5uj-Rx-YHT" firstAttribute="top" secondItem="o98-wa-rYo" secondAttribute="bottom" id="eOY-2e-AYR"/>
                             <constraint firstItem="chG-TI-OfL" firstAttribute="trailing" secondItem="MC1-ds-9mg" secondAttribute="trailing" constant="-16" id="gtj-Ry-3fR"/>
                             <constraint firstItem="chG-TI-OfL" firstAttribute="trailing" secondItem="l4h-va-XLc" secondAttribute="trailingMargin" id="h9Y-9y-se7"/>
@@ -578,6 +578,7 @@
                                 <exclude reference="xYl-xL-y5P"/>
                                 <exclude reference="0D0-Aj-bHn"/>
                                 <exclude reference="DRF-Xc-g6w"/>
+                                <exclude reference="qXT-2y-9Ja"/>
                                 <exclude reference="rz6-q8-D8g"/>
                                 <exclude reference="h9Y-9y-se7"/>
                             </mask>
@@ -595,7 +596,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="locate" width="30" height="30"/>
-        <image name="mapMarker" width="30" height="30"/>
+        <image name="locate" width="22" height="22"/>
+        <image name="mapMarker" width="20" height="32"/>
     </resources>
 </document>

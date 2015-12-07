@@ -10,7 +10,7 @@ import UIKit
 import FSCalendar
 import DateTools
 
-class CalendarViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, FSCalendarDataSource, FSCalendarDelegate, TableCellAnimatorProtocol {
+class CalendarViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, FSCalendarDataSource, FSCalendarDelegate, TableCellAnimatorFromProtocol {
 
     var allEvents: [CHEvent] = []
     var events: [CHEvent] = []
@@ -33,7 +33,9 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
         
         self.navigationController?.delegate = self
         
-        fetchData()
+        if CHUser.currentUser() != nil {
+            fetchData()
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -55,7 +57,7 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
             }
             
             self.calendar.reloadData()
-            self.tableView.reloadData()
+            self.calendar(self.calendar, didSelectDate: (self.calendar.selectedDate == nil) ? self.calendar.today : self.calendar.selectedDate)
         })
     }
     
@@ -79,17 +81,30 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
     // MARK: - UITableViewDataSource
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return events.count
+        return max(events.count, 1)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let event = events[indexPath.row]
-        
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell")! as! EventTableViewCell
-        cell.nameLabel.text = event.name.uppercaseString
-        cell.distanceLabel.text = "\(Int((CHUser.currentUser()?.location.distanceInMilesTo(event.location))!))mi"
-        
-        return cell
+        if indexPath.row < events.count {
+            let event = events[indexPath.row]
+            
+            let cell = tableView.dequeueReusableCellWithIdentifier("Cell")! as! EventTableViewCell
+            cell.nameLabel.text = event.name.uppercaseString
+            cell.distanceLabel.text = "\(Int((CHUser.currentUser()?.location.distanceInMilesTo(event.location))!))mi"
+            
+            if let image = event.image {
+                image.getDataInBackgroundWithBlock({ (data, error) -> Void in
+                    cell.backgroundImageView?.image = UIImage(data: data!)
+                })
+            } else {
+                cell.backgroundImageView.image = UIImage(named: "eventImage")
+            }
+            
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCellWithIdentifier("NoEvents")!
+            return cell
+        }
     }
     
     // MARK: - UITableViewDelegate
@@ -100,7 +115,9 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        performSegueWithIdentifier("ShowEvent", sender: self)
+        if indexPath.row < events.count {
+            performSegueWithIdentifier("ShowEvent", sender: self)
+        }
     }
     
     // MARK: - FSCalendarDataSource
@@ -136,13 +153,24 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
         tableView.reloadData()
     }
     
-    // MARK: - TableCellAnimatorProtocol
+    // MARK: - TableCellAnimatorFromProtocol
     
-    func selectedCellSnapshot() -> UIView {
+    func selectedCellView() -> UIView {
         let cell = tableView.cellForRowAtIndexPath(lastSelectedIndexPath!)!
         let snapshot = cell.snapshotViewAfterScreenUpdates(false)
         snapshot.frame = cell.convertRect(cell.bounds, toView: view)
         return snapshot
+    }
+    
+    func selectedCellImage() -> UIImage {
+        let cell = tableView.cellForRowAtIndexPath(lastSelectedIndexPath!)!
+        
+        UIGraphicsBeginImageContextWithOptions(cell.bounds.size, false, 0.0)
+        cell.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext() as UIImage
+        UIGraphicsEndImageContext()
+        
+        return image
     }
     
     // MARK: - UINavigationControllerDelegate

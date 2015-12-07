@@ -16,7 +16,7 @@ import SVGeocoder
 import TGCameraViewController
 import UITextView_Placeholder
 
-class CreateEventViewController: StaticDataTableViewController, UITextFieldDelegate, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIToolbarDelegate, TGCameraDelegate, LocationViewControllerDelegate, RepeatViewControllerDelegate {
+class CreateEventViewController: StaticDataTableViewController, UITextFieldDelegate, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIToolbarDelegate, LocationViewControllerDelegate, RepeatViewControllerDelegate {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var descriptionTextView: UITextView!
@@ -82,7 +82,7 @@ class CreateEventViewController: StaticDataTableViewController, UITextFieldDeleg
     
     // MARK: - Private Functions
     
-    func dismissKeyboard() {
+    private func dismissKeyboard() {
         view.endEditing(true)
         view.removeGestureRecognizer(tapGR)
     }
@@ -198,11 +198,7 @@ class CreateEventViewController: StaticDataTableViewController, UITextFieldDeleg
         
         if indexPath.section == 4 {
             if indexPath.row == 0 && !cellIsHidden(uploadImageCell) {
-                if UIImagePickerController.isSourceTypeAvailable(.Camera) {
-                    presentViewController(TGCameraNavigationController.newWithCameraDelegate(self), animated: true, completion: nil)
-                } else {
-                    presentViewController(TGAlbum.imagePickerControllerWithDelegate(self), animated: true, completion: nil)
-                }
+                presentViewController(TGAlbum.imagePickerControllerWithDelegate(self), animated: true, completion: nil)
             } else if indexPath.row == 1 && !cellIsHidden(deleteImageCell) {
                 imageView.image = nil
                 imageData = nil
@@ -271,22 +267,6 @@ class CreateEventViewController: StaticDataTableViewController, UITextFieldDeleg
     }
     
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    // MARK: - TGCameraDelegate
-    
-    func cameraDidCancel() {
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    func cameraDidTakePhoto(image: UIImage!) {
-        uploadImage(image)
-        dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    func cameraDidSelectAlbumPhoto(image: UIImage!) {
-        uploadImage(image)
         dismissViewControllerAnimated(true, completion: nil)
     }
     

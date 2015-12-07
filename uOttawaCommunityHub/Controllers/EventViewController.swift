@@ -7,10 +7,16 @@
 //
 
 import UIKit
+import SVGeocoder
 
-class EventViewController: UIViewController {
+class EventViewController: UIViewController, TableCellAnimatorToProtocol, MKMapViewDelegate {
 
+    @IBOutlet weak var snapshotImageView: UIImageView!
+    @IBOutlet weak var mapView: MKMapView!
+    
     var event: CHEvent!
+    var placemark: SVPlacemark!
+    var found = false
 
     // MARK: - View Lifecycle
     
@@ -18,6 +24,36 @@ class EventViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = "Event"
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        if !found {
+            zoomToLocation(event.location.coreLocation().coordinate)
+            found = true
+        }
+    }
+    
+    // MARK: - Private Functions
+    
+    private func zoomToLocation(coordinate: CLLocationCoordinate2D) {
+        var region = MKCoordinateRegion()
+        region.center = coordinate
+        region.span = MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01)
+        mapView.setRegion(region, animated: true)
+    }
+    
+    // MARK: - MKMapViewDelegate
+    
+    func mapView(mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        if found {
+            SVGeocoder.reverseGeocode(mapView.centerCoordinate, completion: { (placemarks, urlResponse, error) -> Void in
+                if placemarks.count > 0 {
+                    self.placemark = placemarks[0] as! SVPlacemark
+                }
+            })
+        }
     }
     
 }

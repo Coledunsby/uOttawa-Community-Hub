@@ -10,7 +10,6 @@
 		B3C4192E914FAB45FAA519C5 /* Pods_uOttawaCommunityHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 606DEAD64004AD6A1354D92D /* Pods_uOttawaCommunityHub.framework */; };
 		ED0B2B981C0BC84F005E22A5 /* Filters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED0B2B971C0BC84F005E22A5 /* Filters.storyboard */; };
 		ED0B2B9B1C0BCB64005E22A5 /* FiltersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0B2B9A1C0BCB64005E22A5 /* FiltersCollectionViewController.swift */; };
-		ED0B2B9D1C0BCC45005E22A5 /* FilterCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0B2B9C1C0BCC45005E22A5 /* FilterCollectionViewCell.swift */; };
 		ED4C0A261C0A4A8B00A4D391 /* ClubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C0A251C0A4A8B00A4D391 /* ClubViewController.swift */; };
 		ED4C0A2E1C0A4C7E00A4D391 /* CHForumPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C0A2D1C0A4C7E00A4D391 /* CHForumPost.swift */; };
 		ED4C0A301C0A4CAE00A4D391 /* ForumPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C0A2F1C0A4CAE00A4D391 /* ForumPostViewController.swift */; };
@@ -65,7 +64,6 @@
 		9FDE9F5FD00AFFBC2CE1148C /* Pods-uOttawaCommunityHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uOttawaCommunityHub.release.xcconfig"; path = "Pods/Target Support Files/Pods-uOttawaCommunityHub/Pods-uOttawaCommunityHub.release.xcconfig"; sourceTree = "<group>"; };
 		ED0B2B971C0BC84F005E22A5 /* Filters.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Filters.storyboard; sourceTree = "<group>"; };
 		ED0B2B9A1C0BCB64005E22A5 /* FiltersCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltersCollectionViewController.swift; sourceTree = "<group>"; };
-		ED0B2B9C1C0BCC45005E22A5 /* FilterCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterCollectionViewCell.swift; sourceTree = "<group>"; };
 		ED4C0A251C0A4A8B00A4D391 /* ClubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubViewController.swift; sourceTree = "<group>"; };
 		ED4C0A2D1C0A4C7E00A4D391 /* CHForumPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHForumPost.swift; sourceTree = "<group>"; };
 		ED4C0A2F1C0A4CAE00A4D391 /* ForumPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForumPostViewController.swift; sourceTree = "<group>"; };
@@ -149,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				ED0B2B9A1C0BCB64005E22A5 /* FiltersCollectionViewController.swift */,
-				ED0B2B9C1C0BCC45005E22A5 /* FilterCollectionViewCell.swift */,
 			);
 			name = Filters;
 			sourceTree = "<group>";
@@ -498,7 +495,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED798A221C1371360012B68E /* EventTableViewCell.swift in Sources */,
-				ED0B2B9D1C0BCC45005E22A5 /* FilterCollectionViewCell.swift in Sources */,
 				ED7CF9C31BF66AB40053687F /* CreateAccountViewController.swift in Sources */,
 				EDC44EEB1C0BC4E400AB9D4B /* CHFilter.swift in Sources */,
 				ED4C0A2E1C0A4C7E00A4D391 /* CHForumPost.swift in Sources */,

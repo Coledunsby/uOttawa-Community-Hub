@@ -41,7 +41,7 @@ class LocationViewController: UIViewController, MKMapViewDelegate, UISearchBarDe
     
     // MARK: - Private Functions
     
-    func zoomToLocation(coordinate: CLLocationCoordinate2D) {
+    private func zoomToLocation(coordinate: CLLocationCoordinate2D) {
         var region = MKCoordinateRegion()
         region.center = coordinate
         region.span.latitudeDelta = min(mapView.region.span.latitudeDelta, 0.2)
@@ -49,7 +49,7 @@ class LocationViewController: UIViewController, MKMapViewDelegate, UISearchBarDe
         mapView.setRegion(region, animated: true)
     }
 
-    func zoomToUserLocation() {
+    private func zoomToUserLocation() {
         zoomToLocation(mapView.userLocation.coordinate)
     }
     

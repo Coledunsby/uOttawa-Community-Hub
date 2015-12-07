@@ -13,30 +13,30 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" id="MkV-AU-jpf" customClass="EventTableViewCell" customModule="uOttawaCommunityHub" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="400" height="100"/>
+            <rect key="frame" x="0.0" y="0.0" width="400" height="150"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MkV-AU-jpf" id="AjB-TF-Txy">
-                <rect key="frame" x="0.0" y="0.0" width="400" height="99"/>
+                <rect key="frame" x="0.0" y="0.0" width="400" height="149"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eventImage" translatesAutoresizingMaskIntoConstraints="NO" id="e64-dx-sLE">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="99"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="149"/>
                         <animations/>
                     </imageView>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dnx-2Z-XPj">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="99"/>
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="154"/>
                         <animations/>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1.2mi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pqi-yg-X3X">
-                        <rect key="frame" x="348" y="67" width="42" height="22"/>
+                        <rect key="frame" x="348" y="117" width="42" height="22"/>
                         <animations/>
                         <fontDescription key="fontDescription" name="AvenirNext-MediumItalic" family="Avenir Next" pointSize="16"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FRIDAY NIGHT" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3XY-6J-TVI">
-                        <rect key="frame" x="10" y="67" width="109" height="22"/>
+                        <rect key="frame" x="10" y="117" width="109" height="22"/>
                         <animations/>
                         <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -54,14 +54,21 @@
                     <constraint firstAttribute="trailing" secondItem="Dnx-2Z-XPj" secondAttribute="trailing" id="Mk8-bU-Nqe"/>
                     <constraint firstAttribute="trailing" secondItem="e64-dx-sLE" secondAttribute="trailing" id="Orp-5c-0u1"/>
                     <constraint firstAttribute="bottom" secondItem="3XY-6J-TVI" secondAttribute="bottom" constant="10" id="Vt2-gf-KO9"/>
+                    <constraint firstAttribute="bottom" secondItem="Dnx-2Z-XPj" secondAttribute="bottom" constant="-5" id="cyf-fd-6J9"/>
                     <constraint firstItem="3XY-6J-TVI" firstAttribute="leading" secondItem="AjB-TF-Txy" secondAttribute="leading" constant="10" id="uXk-8q-BAx"/>
                     <constraint firstItem="Dnx-2Z-XPj" firstAttribute="top" secondItem="AjB-TF-Txy" secondAttribute="top" id="zad-IU-S3t"/>
                     <constraint firstAttribute="bottom" secondItem="e64-dx-sLE" secondAttribute="bottom" id="zbR-0P-yhB"/>
                 </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="D7I-bV-Nd3"/>
+                    </mask>
+                </variation>
             </tableViewCellContentView>
             <animations/>
             <gestureRecognizers/>
             <connections>
+                <outlet property="backgroundImageView" destination="e64-dx-sLE" id="Q18-qL-K12"/>
                 <outlet property="distanceLabel" destination="Pqi-yg-X3X" id="mg9-Mr-W9V"/>
                 <outlet property="nameLabel" destination="3XY-6J-TVI" id="G2o-vL-2vd"/>
                 <outlet property="overlayView" destination="Dnx-2Z-XPj" id="P28-XG-rvo"/>
