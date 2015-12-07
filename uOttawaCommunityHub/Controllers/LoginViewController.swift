@@ -23,16 +23,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         for button in buttons {
             button.layer.cornerRadius = 2.0
-            button.backgroundColor = FlatGreen()
+            button.backgroundColor = FlatGreenDark()
         }
         
         for textField in [studentNumberTextField, passwordTextField] {
             textField.superview?.layer.cornerRadius = 2.0
             textField.superview?.layer.borderWidth = 1.0
-            textField.superview?.layer.borderColor = FlatGreen().CGColor
+            textField.superview?.layer.borderColor = UIColor.whiteColor().CGColor
             textField.superview?.backgroundColor = .clearColor()
+            textField.textColor = .whiteColor()
             
-            textField.attributedPlaceholder = NSAttributedString(string: textField.placeholder!, attributes: [NSForegroundColorAttributeName: FlatGreen()])
+            textField.attributedPlaceholder = NSAttributedString(string: textField.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor.lightGrayColor()])
         }
     }
     
@@ -55,11 +56,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     // MARK: - IBActions
     
     @IBAction func buttonTouchDown(button: UIButton) {
-        button.backgroundColor = FlatGreenDark()
+        button.backgroundColor = FlatGreen()
     }
     
     @IBAction func buttonTouchUp(button: UIButton) {
-        button.backgroundColor = FlatGreen()
+        button.backgroundColor = FlatGreenDark()
     }
     
     @IBAction func loginButtonTapped(button: UIButton) {
@@ -127,7 +128,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     // MARK: - UITextFieldDelegate
     
     func textFieldDidBeginEditing(textField: UITextField) {
-        textField.superview?.layer.borderColor = FlatGreen().CGColor
+        textField.superview?.layer.borderColor = UIColor.whiteColor().CGColor
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {

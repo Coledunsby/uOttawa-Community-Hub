@@ -28,26 +28,27 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
         navigationItem.title = "Create Account"
         
         createAccountButton.layer.cornerRadius = 2.0
-        createAccountButton.backgroundColor = FlatGreen()
+        createAccountButton.backgroundColor = FlatGreenDark()
         
         for textField in [firstNameTextField, lastNameTextField, emailTextField, studentNumberTextField, passwordTextField, confirmTextField] {
             textField.superview!.layer.cornerRadius = 2.0
             textField.superview!.layer.borderWidth = 1.0
-            textField.superview!.layer.borderColor = FlatGreen().CGColor
+            textField.superview!.layer.borderColor = UIColor.whiteColor().CGColor
             textField.superview?.backgroundColor = .clearColor()
+            textField.textColor = .whiteColor()
             
-            textField.attributedPlaceholder = NSAttributedString(string: textField.placeholder!, attributes: [NSForegroundColorAttributeName: FlatGreen()])
+            textField.attributedPlaceholder = NSAttributedString(string: textField.placeholder!, attributes: [NSForegroundColorAttributeName: UIColor.lightGrayColor()])
         }
     }
     
     // MARK: - IBActions
     
     @IBAction func buttonTouchDown(button: UIButton) {
-        button.backgroundColor = FlatGreenDark()
+        button.backgroundColor = FlatGreen()
     }
     
     @IBAction func buttonTouchUp(button: UIButton) {
-        button.backgroundColor = FlatGreen()
+        button.backgroundColor = FlatGreenDark()
     }
     
     @IBAction func createAccountButtonTapped(button: UIButton) {
@@ -127,7 +128,7 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
     // MARK: - UITextFieldDelegate
     
     func textFieldDidBeginEditing(textField: UITextField) {
-        textField.superview?.layer.borderColor = FlatGreen().CGColor
+        textField.superview?.layer.borderColor = UIColor.whiteColor().CGColor
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
