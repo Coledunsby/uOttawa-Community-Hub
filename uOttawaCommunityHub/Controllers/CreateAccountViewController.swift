@@ -28,23 +28,26 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
         navigationItem.title = "Create Account"
         
         createAccountButton.layer.cornerRadius = 2.0
-        createAccountButton.backgroundColor = FlatSkyBlue()
+        createAccountButton.backgroundColor = FlatGreen()
         
         for textField in [firstNameTextField, lastNameTextField, emailTextField, studentNumberTextField, passwordTextField, confirmTextField] {
             textField.superview!.layer.cornerRadius = 2.0
             textField.superview!.layer.borderWidth = 1.0
-            textField.superview!.layer.borderColor = FlatSkyBlue().CGColor
+            textField.superview!.layer.borderColor = FlatGreen().CGColor
+            textField.superview?.backgroundColor = .clearColor()
+            
+            textField.attributedPlaceholder = NSAttributedString(string: textField.placeholder!, attributes: [NSForegroundColorAttributeName: FlatGreen()])
         }
     }
     
     // MARK: - IBActions
     
     @IBAction func buttonTouchDown(button: UIButton) {
-        button.backgroundColor = FlatSkyBlueDark()
+        button.backgroundColor = FlatGreenDark()
     }
     
     @IBAction func buttonTouchUp(button: UIButton) {
-        button.backgroundColor = FlatSkyBlue()
+        button.backgroundColor = FlatGreen()
     }
     
     @IBAction func createAccountButtonTapped(button: UIButton) {
@@ -124,7 +127,7 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate {
     // MARK: - UITextFieldDelegate
     
     func textFieldDidBeginEditing(textField: UITextField) {
-        textField.superview?.layer.borderColor = FlatSkyBlue().CGColor
+        textField.superview?.layer.borderColor = FlatGreen().CGColor
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {

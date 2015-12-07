@@ -14,25 +14,25 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var studentNumberTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var headerView: UIView!
     @IBOutlet var buttons: [UIButton]!
     
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        headerView.backgroundColor = FlatSkyBlue()
         
         for button in buttons {
             button.layer.cornerRadius = 2.0
-            button.backgroundColor = FlatSkyBlue()
+            button.backgroundColor = FlatGreen()
         }
         
         for textField in [studentNumberTextField, passwordTextField] {
             textField.superview?.layer.cornerRadius = 2.0
             textField.superview?.layer.borderWidth = 1.0
-            textField.superview?.layer.borderColor = FlatSkyBlue().CGColor
+            textField.superview?.layer.borderColor = FlatGreen().CGColor
+            textField.superview?.backgroundColor = .clearColor()
+            
+            textField.attributedPlaceholder = NSAttributedString(string: textField.placeholder!, attributes: [NSForegroundColorAttributeName: FlatGreen()])
         }
     }
     
@@ -55,11 +55,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     // MARK: - IBActions
     
     @IBAction func buttonTouchDown(button: UIButton) {
-        button.backgroundColor = FlatSkyBlueDark()
+        button.backgroundColor = FlatGreenDark()
     }
     
     @IBAction func buttonTouchUp(button: UIButton) {
-        button.backgroundColor = FlatSkyBlue()
+        button.backgroundColor = FlatGreen()
     }
     
     @IBAction func loginButtonTapped(button: UIButton) {
@@ -127,7 +127,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     // MARK: - UITextFieldDelegate
     
     func textFieldDidBeginEditing(textField: UITextField) {
-        textField.superview?.layer.borderColor = FlatSkyBlue().CGColor
+        textField.superview?.layer.borderColor = FlatGreen().CGColor
     }
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {

@@ -12,4 +12,12 @@ class EventViewController: UIViewController {
 
     var event: CHEvent!
 
+    // MARK: - View Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        navigationItem.title = "Event"
+    }
+    
 }
