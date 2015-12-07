@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="AvenirNext.ttc">
+            <string>AvenirNext-Medium</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" id="Bud-d8-jb3" customClass="ClubTableViewCell" customModule="uOttawaCommunityHub" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="400" height="100"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Bud-d8-jb3" id="aca-6G-W9v">
+                <rect key="frame" x="0.0" y="0.0" width="400" height="99"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yoga" translatesAutoresizingMaskIntoConstraints="NO" id="oyL-Po-Zht">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="99"/>
+                        <animations/>
+                    </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yw6-de-Dpa">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="99"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clubs" translatesAutoresizingMaskIntoConstraints="NO" id="zFC-ew-pUf">
+                                <rect key="frame" x="334" y="67" width="22" height="22"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="22" id="7bK-ES-Jgk"/>
+                                    <constraint firstAttribute="height" constant="22" id="k3q-42-Dm1"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.25" colorSpace="calibratedRGB"/>
+                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q98-a5-7i2">
+                        <rect key="frame" x="361" y="67" width="29" height="22"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" name="AvenirNext-MediumItalic" family="Avenir Next" pointSize="16"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOGA CLUB" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3do-cc-WIH">
+                        <rect key="frame" x="10" y="67" width="92" height="22"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="oyL-Po-Zht" firstAttribute="leading" secondItem="aca-6G-W9v" secondAttribute="leading" id="4uc-9K-PUa"/>
+                    <constraint firstItem="yw6-de-Dpa" firstAttribute="leading" secondItem="aca-6G-W9v" secondAttribute="leading" id="8FJ-G1-W5H"/>
+                    <constraint firstItem="3do-cc-WIH" firstAttribute="leading" secondItem="aca-6G-W9v" secondAttribute="leading" constant="10" id="A9V-Ga-EdU"/>
+                    <constraint firstAttribute="bottom" secondItem="oyL-Po-Zht" secondAttribute="bottom" id="ATF-2F-BKk"/>
+                    <constraint firstAttribute="trailing" secondItem="oyL-Po-Zht" secondAttribute="trailing" id="DAP-Wy-8O9"/>
+                    <constraint firstItem="Q98-a5-7i2" firstAttribute="leading" secondItem="zFC-ew-pUf" secondAttribute="trailing" constant="5" id="KJs-Re-2Vs"/>
+                    <constraint firstAttribute="trailing" secondItem="yw6-de-Dpa" secondAttribute="trailing" id="Nqc-Bp-aYi"/>
+                    <constraint firstAttribute="trailing" secondItem="Q98-a5-7i2" secondAttribute="trailing" constant="10" id="QQm-xB-iUc"/>
+                    <constraint firstItem="oyL-Po-Zht" firstAttribute="top" secondItem="aca-6G-W9v" secondAttribute="top" id="WQw-Tx-d32"/>
+                    <constraint firstAttribute="bottom" secondItem="Q98-a5-7i2" secondAttribute="bottom" constant="10" id="Z9A-Uo-Gax"/>
+                    <constraint firstAttribute="bottom" secondItem="3do-cc-WIH" secondAttribute="bottom" constant="10" id="cn3-fn-BQi"/>
+                    <constraint firstItem="yw6-de-Dpa" firstAttribute="top" secondItem="aca-6G-W9v" secondAttribute="top" id="iPI-2r-2B7"/>
+                    <constraint firstAttribute="bottom" secondItem="yw6-de-Dpa" secondAttribute="bottom" id="las-n0-Pxo"/>
+                    <constraint firstItem="zFC-ew-pUf" firstAttribute="centerY" secondItem="Q98-a5-7i2" secondAttribute="centerY" id="uhI-bP-LAq"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <gestureRecognizers/>
+            <connections>
+                <outlet property="membersImageView" destination="zFC-ew-pUf" id="ik2-qS-mOV"/>
+                <outlet property="membersLabel" destination="Q98-a5-7i2" id="efQ-xm-2Xj"/>
+                <outlet property="nameLabel" destination="3do-cc-WIH" id="aYb-Fi-l2e"/>
+                <outlet property="overlayView" destination="yw6-de-Dpa" id="d12-qo-KOs"/>
+            </connections>
+            <point key="canvasLocation" x="556" y="261"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="clubs" width="32" height="32"/>
+        <image name="yoga" width="600" height="400"/>
+    </resources>
+</document>

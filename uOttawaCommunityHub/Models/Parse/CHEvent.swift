@@ -8,15 +8,28 @@
 
 import Parse
 
+enum RecurrenceType: Int {
+    case None
+    case Daily
+    case Weekly
+    case Monthly
+}
+
 class CHEvent: PFObject, PFSubclassing {
 
+    @NSManaged var club: CHClub
+    @NSManaged var user: CHUser
     @NSManaged var name: String
     @NSManaged var info: String
-    @NSManaged var members: PFRelation
+    @NSManaged var recurrenceType: Int
+    @NSManaged var startDate: NSDate
+    @NSManaged var image: PFFile?
+    @NSManaged var location: PFGeoPoint
+    @NSManaged private(set) var filters: PFRelation
     
     override class func initialize() {
         struct Static {
-            static var onceToken : dispatch_once_t = 0;
+            static var onceToken : dispatch_once_t = 0
         }
         dispatch_once(&Static.onceToken) {
             self.registerSubclass()

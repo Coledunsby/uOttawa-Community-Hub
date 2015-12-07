@@ -4,15 +4,24 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <mutableArray key="AvenirNext.ttc">
-            <string>AvenirNext-Medium</string>
-            <string>AvenirNext-Medium</string>
-            <string>AvenirNext-Medium</string>
-        </mutableArray>
-    </customFonts>
     <scenes>
-        <!--Calendar-->
+        <!--Filters-->
+        <scene sceneID="wFO-3d-JKC">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Filters" id="Cfj-J4-bXj" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s1T-mG-foc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="566.5" y="1917"/>
+        </scene>
+        <!--Event-->
+        <scene sceneID="9ZD-Sz-9a3">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Event" id="Q0U-Mg-p7w" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iqE-4W-bJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="564" y="1967"/>
+        </scene>
+        <!--Data Source-->
         <scene sceneID="GzM-bd-8fC">
             <objects>
                 <viewController id="KaH-pT-s4z" customClass="CalendarViewController" customModule="uOttawaCommunityHub" customModuleProvider="target" sceneMemberID="viewController">
@@ -24,182 +33,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="200" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="krT-pp-hVU">
-                                <rect key="frame" x="0.0" y="108" width="600" height="492"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="100" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="krT-pp-hVU">
+                                <rect key="frame" x="0.0" y="364" width="600" height="236"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Fn4-xo-pea">
-                                        <rect key="frame" x="0.0" y="92" width="600" height="200"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Fn4-xo-pea" id="NoP-eg-93r">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="eventImage" translatesAutoresizingMaskIntoConstraints="NO" id="iYS-Mu-PAJ">
-                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="199"/>
-                                                    <animations/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Friday Night" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h20-y6-PL2">
-                                                    <rect key="frame" x="10" y="133" width="126" height="31"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AAq-Uc-fjg">
-                                                    <rect key="frame" x="10" y="164" width="222" height="25"/>
-                                                    <animations/>
-                                                    <attributedString key="attributedText">
-                                                        <fragment content="The Roof Gardens">
-                                                            <attributes>
-                                                                <color key="NSColor" red="0.0" green="0.47843137254901957" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <font key="NSFont" size="18" name="AvenirNext-Medium"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                        <fragment content=" at 22:00">
-                                                            <attributes>
-                                                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <font key="NSFont" size="18" name="AvenirNext-Medium"/>
-                                                            </attributes>
-                                                        </fragment>
-                                                    </attributedString>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$10" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Td4-w3-dS2">
-                                                    <rect key="frame" x="549" y="133" width="41" height="31"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="22"/>
-                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <animations/>
-                                            <constraints>
-                                                <constraint firstItem="h20-y6-PL2" firstAttribute="leading" secondItem="NoP-eg-93r" secondAttribute="leading" constant="10" id="5JY-h5-lku"/>
-                                                <constraint firstItem="AAq-Uc-fjg" firstAttribute="leading" secondItem="NoP-eg-93r" secondAttribute="leading" constant="10" id="9xM-lR-zkV"/>
-                                                <constraint firstAttribute="bottom" secondItem="AAq-Uc-fjg" secondAttribute="bottom" constant="10" id="FTG-Gm-Orn"/>
-                                                <constraint firstItem="Td4-w3-dS2" firstAttribute="centerY" secondItem="h20-y6-PL2" secondAttribute="centerY" id="LZs-eB-DRr"/>
-                                                <constraint firstItem="iYS-Mu-PAJ" firstAttribute="leading" secondItem="NoP-eg-93r" secondAttribute="leading" id="M8n-6h-Eve"/>
-                                                <constraint firstItem="iYS-Mu-PAJ" firstAttribute="top" secondItem="NoP-eg-93r" secondAttribute="top" id="aMT-EA-qp9"/>
-                                                <constraint firstAttribute="trailing" secondItem="Td4-w3-dS2" secondAttribute="trailing" constant="10" id="aqt-0h-WkJ"/>
-                                                <constraint firstAttribute="trailing" secondItem="iYS-Mu-PAJ" secondAttribute="trailing" id="cC2-eV-9lN"/>
-                                                <constraint firstItem="AAq-Uc-fjg" firstAttribute="top" secondItem="h20-y6-PL2" secondAttribute="bottom" id="mRr-iT-H1l"/>
-                                                <constraint firstAttribute="bottom" secondItem="iYS-Mu-PAJ" secondAttribute="bottom" id="o6x-me-9cr"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <animations/>
-                                        <connections>
-                                            <segue destination="j8U-YN-LwK" kind="show" id="ilS-8B-jfr"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="KaH-pT-s4z" id="QbW-X3-qa2"/>
+                                    <outlet property="delegate" destination="KaH-pT-s4z" id="lgW-RN-jbZ"/>
                                 </connections>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="inI-aT-MV0">
-                                <rect key="frame" x="0.0" y="64" width="600" height="44"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hwM-Sa-qfm">
-                                        <rect key="frame" x="200" y="0.0" width="200" height="40"/>
-                                        <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="Rc1-JT-b3U"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
-                                        <state key="normal" title="Tomorrow">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I4t-YP-FaH">
-                                        <rect key="frame" x="400" y="0.0" width="200" height="40"/>
-                                        <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="mqx-OJ-ezp"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
-                                        <state key="normal" title="Later">
-                                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OTI-TO-Ztf">
-                                        <rect key="frame" x="0.0" y="40" width="200" height="4"/>
-                                        <animations/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y9v-ZR-BtC">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="40"/>
-                                        <animations/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="mM3-q6-H98"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="15"/>
-                                        <state key="normal" title="Today"/>
-                                    </button>
-                                </subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IH4-r1-TOC" customClass="FSCalendar">
+                                <rect key="frame" x="0.0" y="64" width="600" height="300"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="y9v-ZR-BtC" firstAttribute="top" secondItem="inI-aT-MV0" secondAttribute="top" id="06u-RL-bmi"/>
-                                    <constraint firstAttribute="height" constant="44" id="7ib-M7-GcL"/>
-                                    <constraint firstAttribute="bottom" secondItem="OTI-TO-Ztf" secondAttribute="bottom" id="Adl-wA-T0N"/>
-                                    <constraint firstItem="I4t-YP-FaH" firstAttribute="top" secondItem="inI-aT-MV0" secondAttribute="top" id="WYv-E8-P5r"/>
-                                    <constraint firstItem="hwM-Sa-qfm" firstAttribute="leading" secondItem="y9v-ZR-BtC" secondAttribute="trailing" id="XSs-Av-p4A"/>
-                                    <constraint firstItem="I4t-YP-FaH" firstAttribute="width" secondItem="y9v-ZR-BtC" secondAttribute="width" id="ZAW-gO-C0P"/>
-                                    <constraint firstItem="OTI-TO-Ztf" firstAttribute="top" secondItem="y9v-ZR-BtC" secondAttribute="bottom" id="ZEf-jC-HGB"/>
-                                    <constraint firstItem="hwM-Sa-qfm" firstAttribute="width" secondItem="y9v-ZR-BtC" secondAttribute="width" id="aYq-gc-mqN"/>
-                                    <constraint firstItem="hwM-Sa-qfm" firstAttribute="top" secondItem="inI-aT-MV0" secondAttribute="top" id="cNC-ez-z8V"/>
-                                    <constraint firstItem="I4t-YP-FaH" firstAttribute="leading" secondItem="hwM-Sa-qfm" secondAttribute="trailing" id="cYz-g8-Qf0"/>
-                                    <constraint firstItem="y9v-ZR-BtC" firstAttribute="leading" secondItem="inI-aT-MV0" secondAttribute="leading" id="eJn-hp-heC"/>
-                                    <constraint firstItem="OTI-TO-Ztf" firstAttribute="centerX" secondItem="y9v-ZR-BtC" secondAttribute="centerX" id="lQp-9E-cve"/>
-                                    <constraint firstAttribute="trailing" secondItem="I4t-YP-FaH" secondAttribute="trailing" id="roQ-7a-cln"/>
-                                    <constraint firstItem="OTI-TO-Ztf" firstAttribute="width" secondItem="y9v-ZR-BtC" secondAttribute="width" id="vMa-yA-1b5"/>
+                                    <constraint firstAttribute="height" constant="300" id="baL-0p-aYx"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="allowsSelection" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="allowsMultipleSelection" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="pagingEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="scrollEnabled" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="useVeryShortWeekdaySymbols" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="fakeSubtitles" value="NO"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <outlet property="dataSource" destination="KaH-pT-s4z" id="bF2-kr-Vnt"/>
+                                    <outlet property="delegate" destination="KaH-pT-s4z" id="xka-is-Mvj"/>
+                                </connections>
                             </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="krT-pp-hVU" firstAttribute="top" secondItem="IH4-r1-TOC" secondAttribute="bottom" id="3tH-6W-F4s"/>
                             <constraint firstItem="krT-pp-hVU" firstAttribute="leading" secondItem="9vd-jX-Cle" secondAttribute="leading" id="5TD-Pb-1UA"/>
-                            <constraint firstItem="inI-aT-MV0" firstAttribute="leading" secondItem="9vd-jX-Cle" secondAttribute="leading" id="C4z-J1-7cj"/>
+                            <constraint firstItem="IH4-r1-TOC" firstAttribute="leading" secondItem="9vd-jX-Cle" secondAttribute="leading" id="5Ve-n9-uRE"/>
+                            <constraint firstAttribute="trailing" secondItem="IH4-r1-TOC" secondAttribute="trailing" id="6O9-vW-f7Q"/>
                             <constraint firstAttribute="bottom" secondItem="krT-pp-hVU" secondAttribute="bottom" id="J9V-UI-L7r"/>
                             <constraint firstAttribute="trailing" secondItem="krT-pp-hVU" secondAttribute="trailing" id="Jb3-wL-cU1"/>
-                            <constraint firstAttribute="trailing" secondItem="inI-aT-MV0" secondAttribute="trailing" id="UuC-sC-Lli"/>
-                            <constraint firstItem="krT-pp-hVU" firstAttribute="top" secondItem="inI-aT-MV0" secondAttribute="bottom" id="nGf-8V-MRN"/>
-                            <constraint firstItem="inI-aT-MV0" firstAttribute="top" secondItem="InI-xE-S78" secondAttribute="bottom" id="oHk-Tt-je8"/>
-                            <constraint firstItem="inI-aT-MV0" firstAttribute="top" secondItem="9vd-jX-Cle" secondAttribute="top" id="oWj-xU-ukd"/>
+                            <constraint firstItem="IH4-r1-TOC" firstAttribute="top" secondItem="InI-xE-S78" secondAttribute="bottom" id="poD-hh-ajO"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="oWj-xU-ukd"/>
-                            </mask>
-                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Calendar" id="EoB-xe-AqW"/>
+                    <navigationItem key="navigationItem" title="Calendar" id="EoB-xe-AqW">
+                        <barButtonItem key="leftBarButtonItem" image="filter" id="j7h-LK-2xz">
+                            <connections>
+                                <segue destination="Cfj-J4-bXj" kind="presentation" id="UDN-Pk-C8F"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Week" id="UOB-Dc-nGt">
+                            <connections>
+                                <action selector="didTapChangeModeButton:" destination="KaH-pT-s4z" id="iql-D4-v8X"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="calendar" destination="IH4-r1-TOC" id="WyA-Uy-O9C"/>
+                        <outlet property="calendarHeightConstraint" destination="baL-0p-aYx" id="1wL-QY-qc8"/>
+                        <outlet property="tableView" destination="krT-pp-hVU" id="Di5-PW-rWc"/>
+                        <segue destination="Q0U-Mg-p7w" kind="show" identifier="ShowEvent" id="V72-oM-8cm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eEQ-gw-35Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="101" y="1942"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="eAt-be-Rf9">
-            <objects>
-                <viewController id="j8U-YN-LwK" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="f9E-kC-Kf1"/>
-                        <viewControllerLayoutGuide type="bottom" id="wTC-T6-3qi"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="iXk-24-379">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="G7t-7l-vzU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="831" y="1942"/>
         </scene>
         <!--Calendar-->
         <scene sceneID="ieD-Ht-TMu">
@@ -225,6 +123,6 @@
     </scenes>
     <resources>
         <image name="calendar" width="32" height="32"/>
-        <image name="eventImage" width="1200" height="750"/>
+        <image name="filter" width="30" height="30"/>
     </resources>
 </document>

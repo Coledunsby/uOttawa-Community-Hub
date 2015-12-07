@@ -51,7 +51,7 @@ class ForumViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell")! as! ForumPostTableViewCell
         cell.nameLabel.text = forumPost.name
         cell.infoLabel.text = forumPost.user.name() + " | " + NSDate.timeAgoSinceDate(forumPost.createdAt)
-        cell.replyCountLabel.text = "-"
+        cell.replyCountLabel.text = "–"
         
         let query = CHForumReply.query()
         query?.whereKey("forumPost", equalTo: forumPost)

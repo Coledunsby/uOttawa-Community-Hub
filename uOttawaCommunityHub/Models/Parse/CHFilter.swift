@@ -1,18 +1,17 @@
 //
-//  CHForumPost.swift
+//  CHFilter.swift
 //  uOttawaCommunityHub
 //
-//  Created by Cole Dunsby on 2015-11-28.
+//  Created by Cole Dunsby on 2015-11-29.
 //  Copyright © 2015 Cole Dunsby. All rights reserved.
 //
 
 import Parse
 
-class CHForumPost: PFObject, PFSubclassing {
+class CHFilter: PFObject, PFSubclassing {
     
-    @NSManaged var user: CHUser
     @NSManaged var name: String
-    @NSManaged var info: String
+    @NSManaged var image: PFFile
     
     override class func initialize() {
         struct Static {
@@ -24,7 +23,7 @@ class CHForumPost: PFObject, PFSubclassing {
     }
     
     static func parseClassName() -> String {
-        return "ForumPost"
+        return "Filter"
     }
     
 }
