@@ -29,7 +29,7 @@
                                     <constraint firstAttribute="height" constant="150" id="Y2Z-bx-0g6"/>
                                 </constraints>
                             </imageView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oda-IO-xKK">
+                            <mapView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" mapType="standard" zoomEnabled="NO" scrollEnabled="NO" rotateEnabled="NO" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Oda-IO-xKK">
                                 <rect key="frame" x="0.0" y="214" width="600" height="200"/>
                                 <animations/>
                                 <constraints>

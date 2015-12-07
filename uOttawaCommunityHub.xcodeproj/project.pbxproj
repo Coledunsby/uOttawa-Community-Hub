@@ -334,11 +334,11 @@
 				ED77BFFC1C05492D00715C03 /* Calendar.storyboard */,
 				ED77BFFE1C05495F00715C03 /* Clubs.storyboard */,
 				ED9235AF1C14B7A5000832F4 /* CreateClub.storyboard */,
+				ED798A1E1C1364B10012B68E /* Event.storyboard */,
 				ED9235AB1C14B644000832F4 /* CreateEvent.storyboard */,
 				ED77C0001C05497100715C03 /* Forum.storyboard */,
 				ED77C0021C05497F00715C03 /* Settings.storyboard */,
 				ED0B2B971C0BC84F005E22A5 /* Filters.storyboard */,
-				ED798A1E1C1364B10012B68E /* Event.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
