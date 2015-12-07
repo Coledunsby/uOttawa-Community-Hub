@@ -30,7 +30,7 @@ class CreateForumPostViewController: UITableViewController, UITextFieldDelegate,
     
     // MARK: - Private Functions
     
-    private func dismissKeyboard() {
+    func dismissKeyboard() {
         view.endEditing(true)
         view.removeGestureRecognizer(tapGR)
     }

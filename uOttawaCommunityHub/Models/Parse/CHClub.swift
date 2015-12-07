@@ -15,9 +15,9 @@ class CHClub: PFObject, PFSubclassing {
     @NSManaged var email: String
     @NSManaged var website: String
     @NSManaged var image: PFFile?
+    @NSManaged var filter: CHFilter
     @NSManaged private(set) var admins: PFRelation
     @NSManaged private(set) var members: PFRelation
-    @NSManaged private(set) var filters: PFRelation
     
     override class func initialize() {
         struct Static {

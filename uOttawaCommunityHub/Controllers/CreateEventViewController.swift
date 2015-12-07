@@ -82,7 +82,7 @@ class CreateEventViewController: StaticDataTableViewController, UITextFieldDeleg
     
     // MARK: - Private Functions
     
-    private func dismissKeyboard() {
+    func dismissKeyboard() {
         view.endEditing(true)
         view.removeGestureRecognizer(tapGR)
     }

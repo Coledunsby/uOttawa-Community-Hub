@@ -25,7 +25,6 @@ class CHEvent: PFObject, PFSubclassing {
     @NSManaged var startDate: NSDate
     @NSManaged var image: PFFile?
     @NSManaged var location: PFGeoPoint
-    @NSManaged private(set) var filters: PFRelation
     
     override class func initialize() {
         struct Static {

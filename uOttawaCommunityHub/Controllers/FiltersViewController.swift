@@ -10,12 +10,15 @@ import UIKit
 
 class FiltersViewController: UITableViewController {
 
-    var filters: [CHFilter] = []
+    var allFilters = NSMutableArray()
+    var selectedFilters: NSMutableArray!
     
     // MARK: - View Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        selectedFilters = CHUser.currentUser()?.filters
         
         fetchData()
     }
@@ -26,10 +29,10 @@ class FiltersViewController: UITableViewController {
         let query = CHFilter.query()
         query?.orderByAscending("name")
         query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
-            self.filters.removeAll()
+            self.allFilters.removeAllObjects()
             
             for object in objects! {
-                self.filters.append(object as! CHFilter)
+                self.allFilters.addObject(object as! CHFilter)
             }
             
             self.tableView.reloadData()
@@ -37,8 +40,8 @@ class FiltersViewController: UITableViewController {
     }
     
     private func indexOfFilter(filter: CHFilter) -> Int {
-        for var i = 0; i < CHUser.currentUser()!.filters.count; i++ {
-            if filter.objectId == CHUser.currentUser()!.filters[i].objectId {
+        for var i = 0; i < selectedFilters.count; i++ {
+            if filter.objectId == selectedFilters[i].objectId {
                 return i
             }
         }
@@ -48,17 +51,20 @@ class FiltersViewController: UITableViewController {
     // MARK: - IBActions
     
     @IBAction func doneButtonTapped(sender: UIButton) {
-        navigationController?.dismissViewControllerAnimated(true, completion: nil)
+        CHUser.currentUser()?.filters = selectedFilters
+        CHUser.currentUser()?.saveInBackgroundWithBlock({ (succeeded, error) -> Void in
+            self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
+        })
     }
     
     // MARK: - UITableViewDataSource
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filters.count
+        return allFilters.count
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let filter = filters[indexPath.row]
+        let filter = allFilters[indexPath.row] as! CHFilter
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell")!
         cell.textLabel?.text = filter.name
@@ -72,16 +78,14 @@ class FiltersViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
-        let filter = filters[indexPath.row]
+        let filter = allFilters[indexPath.row] as! CHFilter
         let index = indexOfFilter(filter)
         
         if index == -1 {
-            CHUser.currentUser()!.filters.addObject(filter)
+            selectedFilters.addObject(filter)
         } else {
-            CHUser.currentUser()!.filters.removeObjectAtIndex(index)
+            selectedFilters.removeObjectAtIndex(index)
         }
-        
-        CHUser.currentUser()?.saveInBackground()
         
         tableView.reloadData()
     }

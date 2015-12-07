@@ -46,6 +46,7 @@ class ClubsViewController: UITableViewController, UISearchBarDelegate, TableCell
     private func fetchData() {
         let query = CHClub.query()
         query?.orderByAscending("name")
+        query?.whereKey("filter", containedIn: CHUser.currentUser()!.filters as [AnyObject])
         query?.limit = 1000
         query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
             self.allClubs.removeAll()

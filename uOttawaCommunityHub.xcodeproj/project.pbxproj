@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		B3C4192E914FAB45FAA519C5 /* Pods_uOttawaCommunityHub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 606DEAD64004AD6A1354D92D /* Pods_uOttawaCommunityHub.framework */; };
 		ED0B2B981C0BC84F005E22A5 /* Filters.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED0B2B971C0BC84F005E22A5 /* Filters.storyboard */; };
-		ED0B2B9B1C0BCB64005E22A5 /* FiltersCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0B2B9A1C0BCB64005E22A5 /* FiltersCollectionViewController.swift */; };
+		ED0B2B9B1C0BCB64005E22A5 /* FiltersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0B2B9A1C0BCB64005E22A5 /* FiltersViewController.swift */; };
 		ED4C0A261C0A4A8B00A4D391 /* ClubViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C0A251C0A4A8B00A4D391 /* ClubViewController.swift */; };
 		ED4C0A2E1C0A4C7E00A4D391 /* CHForumPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C0A2D1C0A4C7E00A4D391 /* CHForumPost.swift */; };
 		ED4C0A301C0A4CAE00A4D391 /* ForumPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4C0A2F1C0A4CAE00A4D391 /* ForumPostViewController.swift */; };
@@ -63,7 +63,7 @@
 		606DEAD64004AD6A1354D92D /* Pods_uOttawaCommunityHub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_uOttawaCommunityHub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FDE9F5FD00AFFBC2CE1148C /* Pods-uOttawaCommunityHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-uOttawaCommunityHub.release.xcconfig"; path = "Pods/Target Support Files/Pods-uOttawaCommunityHub/Pods-uOttawaCommunityHub.release.xcconfig"; sourceTree = "<group>"; };
 		ED0B2B971C0BC84F005E22A5 /* Filters.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Filters.storyboard; sourceTree = "<group>"; };
-		ED0B2B9A1C0BCB64005E22A5 /* FiltersCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltersCollectionViewController.swift; sourceTree = "<group>"; };
+		ED0B2B9A1C0BCB64005E22A5 /* FiltersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FiltersViewController.swift; sourceTree = "<group>"; };
 		ED4C0A251C0A4A8B00A4D391 /* ClubViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClubViewController.swift; sourceTree = "<group>"; };
 		ED4C0A2D1C0A4C7E00A4D391 /* CHForumPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CHForumPost.swift; sourceTree = "<group>"; };
 		ED4C0A2F1C0A4CAE00A4D391 /* ForumPostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForumPostViewController.swift; sourceTree = "<group>"; };
@@ -146,7 +146,7 @@
 		ED0B2B991C0BC880005E22A5 /* Filters */ = {
 			isa = PBXGroup;
 			children = (
-				ED0B2B9A1C0BCB64005E22A5 /* FiltersCollectionViewController.swift */,
+				ED0B2B9A1C0BCB64005E22A5 /* FiltersViewController.swift */,
 			);
 			name = Filters;
 			sourceTree = "<group>";
@@ -513,7 +513,7 @@
 				ED77C00E1C0553DA00715C03 /* ForumViewController.swift in Sources */,
 				ED798A241C13713D0012B68E /* ClubTableViewCell.swift in Sources */,
 				ED4C0A261C0A4A8B00A4D391 /* ClubViewController.swift in Sources */,
-				ED0B2B9B1C0BCB64005E22A5 /* FiltersCollectionViewController.swift in Sources */,
+				ED0B2B9B1C0BCB64005E22A5 /* FiltersViewController.swift in Sources */,
 				ED4C0A321C0A4CBC00A4D391 /* CreateForumPostViewController.swift in Sources */,
 				ED77C0061C054DDD00715C03 /* UIAlertView+Additions.swift in Sources */,
 				ED7CF9B31BF665F10053687F /* AppDelegate.swift in Sources */,

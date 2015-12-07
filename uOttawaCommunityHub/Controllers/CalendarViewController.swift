@@ -47,7 +47,10 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
     // MARK: - Private Functions
     
     private func fetchData() {
+        let clubQuery = CHClub.query()?.whereKey("filter", containedIn: CHUser.currentUser()!.filters as [AnyObject])
+        
         let query = CHEvent.query()
+        query?.whereKey("club", matchesQuery: clubQuery!)
         query?.limit = 1000
         query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
             self.allEvents.removeAll()
