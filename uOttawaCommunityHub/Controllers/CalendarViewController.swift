@@ -53,14 +53,16 @@ class CalendarViewController: UIViewController, UITableViewDataSource, UITableVi
         query?.whereKey("club", matchesQuery: clubQuery!)
         query?.limit = 1000
         query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
-            self.allEvents.removeAll()
-            
-            for object in objects! {
-                self.allEvents.append(object as! CHEvent)
+            if let objects = objects {
+                self.allEvents.removeAll()
+                
+                for object in objects {
+                    self.allEvents.append(object as! CHEvent)
+                }
+                
+                self.calendar.reloadData()
+                self.calendar(self.calendar, didSelectDate: (self.calendar.selectedDate == nil) ? self.calendar.today : self.calendar.selectedDate)
             }
-            
-            self.calendar.reloadData()
-            self.calendar(self.calendar, didSelectDate: (self.calendar.selectedDate == nil) ? self.calendar.today : self.calendar.selectedDate)
         })
     }
     

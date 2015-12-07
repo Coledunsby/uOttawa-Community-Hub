@@ -29,13 +29,15 @@ class FiltersViewController: UITableViewController {
         let query = CHFilter.query()
         query?.orderByAscending("name")
         query?.findObjectsInBackgroundWithBlock({ (objects, error) -> Void in
-            self.allFilters.removeAllObjects()
-            
-            for object in objects! {
-                self.allFilters.addObject(object as! CHFilter)
+            if let objects = objects {
+                self.allFilters.removeAllObjects()
+                
+                for object in objects {
+                    self.allFilters.addObject(object as! CHFilter)
+                }
+                
+                self.tableView.reloadData()
             }
-            
-            self.tableView.reloadData()
         })
     }
     
