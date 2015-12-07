@@ -13,6 +13,7 @@ class EventViewController: UIViewController, TableCellAnimatorToProtocol, MKMapV
 
     @IBOutlet weak var snapshotImageView: UIImageView!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     var event: CHEvent!
     var placemark: SVPlacemark!
@@ -24,6 +25,8 @@ class EventViewController: UIViewController, TableCellAnimatorToProtocol, MKMapV
         super.viewDidLoad()
         
         navigationItem.title = "Event"
+        
+        descriptionLabel.text = event.info
     }
     
     override func viewDidLayoutSubviews() {
