@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().tintColor = FlatGreen()
         UINavigationBar.appearance().barTintColor = FlatBlack()
         UINavigationBar.appearance().translucent = false
-        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: FlatGreen(), NSFontAttributeName: UIFont(name: "AvenirNext-Medium", size: 18)!]
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName: UIColor.whiteColor(), NSFontAttributeName: UIFont(name: "AvenirNext-Medium", size: 18)!]
         UIBarButtonItem.appearance().setTitleTextAttributes([NSForegroundColorAttributeName: FlatGreen(), NSFontAttributeName: UIFont(name: "AvenirNext-DemiBold", size: 16)!], forState: .Normal)
         
         // Tab Bar
