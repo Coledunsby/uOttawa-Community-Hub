@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 
 class FiltersViewController: UITableViewController {
 
@@ -67,10 +68,12 @@ class FiltersViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let filter = allFilters[indexPath.row] as! CHFilter
+        let selected = (indexOfFilter(filter) != -1)
         
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell")!
         cell.textLabel?.text = filter.name
-        cell.accessoryType = (indexOfFilter(filter) == -1) ? .None : .Checkmark
+        cell.textLabel?.textColor = selected ? FlatGreen() : .whiteColor()
+        cell.accessoryType = selected ? .Checkmark : .None
         
         return cell
     }

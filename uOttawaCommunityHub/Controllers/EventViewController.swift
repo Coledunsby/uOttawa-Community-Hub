@@ -25,6 +25,7 @@ class EventViewController: UIViewController, TableCellAnimatorToProtocol, MKMapV
         super.viewDidLoad()
         
         navigationItem.title = "Event"
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Action, target: self, action: "share")
         
         descriptionLabel.text = event.info
     }

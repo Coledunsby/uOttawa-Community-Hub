@@ -23,12 +23,6 @@ class ClubViewController: UIViewController, TableCellAnimatorToProtocol {
     var membersVC: ClubMembersViewController!
     var infoVC: ClubInfoViewController!
     
-    // MARK: - View Lifecycle
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
     // MARK: - IBActions
     
     @IBAction func eventsButtonTapped(button: UIButton) {
