@@ -1,11 +1,11 @@
 PODS:
-  - Bolts/Tasks (1.5.0)
+  - Bolts/Tasks (1.5.1)
   - ChameleonFramework/Default (2.0.6)
   - ChameleonFramework/Swift (2.0.6):
     - ChameleonFramework/Default
   - DateTools (1.7.0)
-  - EasyAnimation (1.0.1)
-  - FSCalendar (1.7.1)
+  - EasyAnimation (1.0.2)
+  - FSCalendar (1.7.2)
   - iOSBlocks (1.2):
     - iOSBlocks/Cocoa (= 1.2)
   - iOSBlocks/Cocoa (1.2):
@@ -17,8 +17,8 @@ PODS:
   - iOSBlocks/Foundation (1.2)
   - iOSBlocks/MessageUI (1.2)
   - iOSBlocks/UIKit (1.2)
-  - MBProgressHUD (0.9.1)
-  - Parse (1.10.0):
+  - MBProgressHUD (0.9.2)
+  - Parse (1.11.0):
     - Bolts/Tasks (~> 1.5)
   - StaticDataTableViewController (2.0.5)
   - SVGeocoder (0.1)
@@ -39,14 +39,14 @@ DEPENDENCIES:
   - UITextView+Placeholder
 
 SPEC CHECKSUMS:
-  Bolts: 722ab9a4f8b50fc4ed1b9998a5a7a2b3f16d80b4
+  Bolts: a12663244b1d3351c738882e71902fc74db54f64
   ChameleonFramework: a6b466873ff9a4ce3a5196c20bccf1a97ad9f446
   DateTools: 53288ee8b905fdc75897a1e6b5cc0144b14cba60
-  EasyAnimation: 270584ad88949718dfb9e2d957719f4f7ddc87ea
-  FSCalendar: 2eeab982e944125c6b2bc0246438128f3cf72e3e
+  EasyAnimation: 9615e40f58aa7d8d6a67de66e0edda1903ffa990
+  FSCalendar: 38f5b3de1aeaa7dc03a3e997bdc6fb3ff3a88b8d
   iOSBlocks: a52cab17a30314e91b2c85ea4c65f84d19826676
-  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
-  Parse: 90b2544822200f84b18bfacc4e8b0a3a6c3584a2
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
+  Parse: 886af46a0a677402f6374bb97ac212e795f70afe
   StaticDataTableViewController: 7ea8d7bc8c7f0a4e9255a320224462c7346c1d4a
   SVGeocoder: f5261622e90c9bfb48e84df3765afd1e6522ae66
   TGCameraViewController: 06bc4b742f2524fbf60f92cade61df595e8b8678
